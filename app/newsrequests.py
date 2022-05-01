@@ -1,5 +1,6 @@
+from concurrent.futures import process
 import urllib.request,json
-#import requests 
+import requests 
 from .models import Source, Article
 
 #Get API Key
@@ -49,3 +50,35 @@ def process_results(sources_list):
             source_results.append(new_source)
 
     return source_results
+
+#return highlight results
+def get_article (source_id):
+     get_highlights_url = highlights_url.format (api_key)
+     with urllib.request.urlopen(get_highlights_url) as url:
+        get_data = url.read()
+        retrieve_json_data = json.loads(get_data)
+        articles_data = None
+         
+        if retrieve_json_data['articles']:
+             articles_list = retrieve_json_data['articles']
+             articles_data = process_article(articles_list)
+            
+        return articles_data
+    
+#process source results
+def process_article(articles_list):
+    articles_data = []
+    for article in articles_list:
+        id=article.get('id')
+        name=article.get('name')
+        urlToImage=article.get('urlToImage')
+        description=article.get('description')
+        publishedAt=article.get('publishedAt')
+        url=article.get('url')
+        title=article.get('title')
+        source=article.get('source')
+        if description:
+            new_article=Article(id,name,urlToImage,description,title,url,publishedAt,source)
+            articles_data.append(new_article)
+
+    return articles_data
