@@ -19,20 +19,20 @@ def configure_request(app):
     search_url = app.config ['SEARCH_SOURCES']
    
    #get json response from url
-# def get_sources ():
-#     sources_url = sources_url.format (api_key)
+def get_sources ():
+    source_api_url = sources_url.format (api_key)
     
-#     with urllib.request.urlopen(source_api_url) as url:
-#         unread_data=url.read()
-#         read_json=json.loads(unread_data)
+    with urllib.request.urlopen(source_api_url) as url:
+        unread_data=url.read()
+        read_json=json.loads(unread_data)
 
-#         source_results=None
+        source_results=None
 
-#         if read_json['sources']:
-#             sources_list=read_json['sources']
-#             source_results=process_results(sources_list)
+        if read_json['sources']:
+            sources_list=read_json['sources']
+            source_results=process_results(sources_list)
 
-#     return source_results
+    return source_results
     
     
 #processs source results
@@ -82,3 +82,4 @@ def process_article(articles_list):
             articles_data.append(new_article)
 
     return articles_data
+#search function for articles
