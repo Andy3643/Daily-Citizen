@@ -19,3 +19,8 @@
     {% endfor %}
 {% endmain %}
 
+{% main getSources(source_list) %}
+    {% for source in source_list %}
+       <a class="dropdown-item" href="{{source.url}}" target="_blank">{{source.name}}</a>
+    {% endfor%}
+{% endmain %}
