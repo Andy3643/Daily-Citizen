@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+{% body block%}
+<div class="panel panel-success">
+    <h1 class="my-4 panel-heading">Business</h1>
+
+    <ul>
+    {{macro.displaySources(sports)}}
+    </ul>
+</div>
+
+{% endblock%}

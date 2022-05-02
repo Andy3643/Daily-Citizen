@@ -1,12 +1,9 @@
 from concurrent.futures import process
 import urllib.request,json
-#import requests 
+import requests 
 from .models import Source, Article
 
-#Get API Key
 api_key = None
-
-#Get base URL
 sources_url = None
 highlights_url = None
 search_url = None
@@ -18,7 +15,7 @@ def configure_request(app):
     highlights_url = app.config ['HEADLINES_API_URL']
     search_url = app.config ['SEARCH_SOURCES']
    
-   #get json response from url
+#get json response from url
 def get_sources ():
     source_api_url = sources_url.format (api_key)
     
@@ -53,7 +50,7 @@ def process_results(sources_list):
 
 #return highlight results
 def get_article (source_id):
-     get_highlights_url = highlights_url.format (api_key)
+     get_highlights_url = highlights_url.format (source_id,api_key)
      with urllib.request.urlopen(get_highlights_url) as url:
         get_data = url.read()
         retrieve_json_data = json.loads(get_data)
