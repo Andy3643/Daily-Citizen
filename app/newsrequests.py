@@ -1,6 +1,6 @@
 from concurrent.futures import process
 import urllib.request,json
-import requests 
+#import requests 
 from .models import Source, Article
 
 #Get API Key
