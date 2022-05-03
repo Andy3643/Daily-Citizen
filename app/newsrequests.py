@@ -1,6 +1,7 @@
-from concurrent.futures import process
+#from concurrent.futures import process
 import urllib.request,json
 import requests 
+requests
 from .models import Source, Article
 
 api_key = None
@@ -12,12 +13,12 @@ def configure_request(app):
     global api_key,sources_url,highlights_url,search_url
     api_key = app.config['NEWS_API_KEY']
     sources_url = app.config['SOURCE_API_URL']
-    highlights_url = app.config ['HEADLINES_API_URL']
-    search_url = app.config ['SEARCH_SOURCES']
+    highlights_url = app.config['HEADLINES_API_URL']
+    search_url = app.config['SEARCH_SOURCES']
    
 #get json response from url
 def get_sources ():
-    source_api_url = sources_url.format (api_key)
+    source_api_url = sources_url.format(api_key)
     
     with urllib.request.urlopen(source_api_url) as url:
         unread_data=url.read()
@@ -49,8 +50,10 @@ def process_results(sources_list):
     return source_results
 
 #return highlight results
-def get_article (source_id):
-     get_highlights_url = highlights_url.format (source_id,api_key)
+def get_article ():
+     print(highlights_url)
+     get_highlights_url = highlights_url.format(api_key)
+     print(get_highlights_url)
      with urllib.request.urlopen(get_highlights_url) as url:
         get_data = url.read()
         retrieve_json_data = json.loads(get_data)

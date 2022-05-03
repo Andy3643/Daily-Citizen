@@ -5,7 +5,7 @@ from ..newsrequests import  get_article,get_sources, search_for_article,search_u
 
 @main.route('/')
 def index():
-    articles=get_article('source_id')
+    articles=get_article()
     sport=search_for_article('sports')
     business=search_for_article('business')
     sources=get_sources()

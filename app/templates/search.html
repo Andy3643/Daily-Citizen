@@ -1,0 +1,9 @@
+{% block content %}
+<div class="panel panel-danger">
+    <h1 class="my-4 panel-heading">Searches for <span>{{title}}</span></h1>
+
+    <ul>
+    {{macro.displaySources(article)}}
+    </ul>
+</div>
+{% endblock%}
