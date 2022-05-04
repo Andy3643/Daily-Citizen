@@ -41,6 +41,8 @@
 ## Technology Used
 * Python3.8
 
+## Known Bugs
+* The search functionality is not fully operational. Git clonning and send requests are allowed to improve the user experience.
 
 [Go Back to the top](#description)
 
