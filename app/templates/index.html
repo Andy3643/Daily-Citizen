@@ -1,8 +1,68 @@
 {% extends 'base.html'%}
 {% import 'macro.html' as macro %}
 
-
+{% block navigation %}
+{% endblock%}
 {% block content %}
+
+<!--navbar start-->
+<!-- <nav class="navbar navbar-light navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-white " href="#"><h2><span><span class="text-white">DAILY CITIZEN</span> GENERETOR</span></h2></a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><span >TRENDING TOPICS</span></h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active text-white px-4" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-white px-4" href="#">Politics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-white px-4" href="#contact-us">Sports News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  text-white px-4" href="#contact-us">Business News</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+
+  <div class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"> Daily Citizen </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/business">Business</a></li>
+        </div>
+
+    </div>
+</div>
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search News...." aria-label="Search" name="search_name">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<!--navbar end-->
 
 <div class="panel panel-danger">
     <h2 class="my-4 panel-heading">TOP HEADLINES</h2>
@@ -27,15 +87,6 @@
 </div>
 <div class="container ">
     <div class="row ">
-        <div class="col-md-6">
-            <ul class="list-group list-group-horizontal-xl icons bg-dark ">
-                <li class="icon-item"><a href="http://instagram.com" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="icon-item"><a href="http://facebook.com" target="_blank" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                <li class="icon-item"><a href="http://twitter.com" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="icon-item"><a href="http://github.com" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                <li class="icon-item"><a href="http://linkedin.com" target="_blank" title="Github"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
         <div class="col-md-6">
             <footer class="page-footer font-small special-color-dark">
 
